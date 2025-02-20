@@ -5,11 +5,11 @@ import { useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const Login = () => {
-  const { googleLogin } = useContext(AuthContext);
+  const { googleLogin, user } = useContext(AuthContext);
 
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
+  const from = location.state?.from?.pathname || "/tasks";
 
   const handleGoogleLogin = () => {
     googleLogin()
@@ -34,10 +34,15 @@ const Login = () => {
 
   return (
     <div className="mt-20 mx-auto flex items-center justify-center">
-      <img className="w-full max-w-96" src="https://i.postimg.cc/BQVLCCrZ/Login-amico.png" alt="" />
+      <img
+        className="w-full max-w-96"
+        src="https://i.postimg.cc/BQVLCCrZ/Login-amico.png"
+        alt=""
+      />
+
       <button
         onClick={handleGoogleLogin}
-        className="btn-lg btn max-w-72 border-2"
+        className={`btn shadow-md shadow-black hover:shadow-slate-800`}
       >
         Login With Google
       </button>

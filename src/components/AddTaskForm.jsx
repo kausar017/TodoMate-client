@@ -1,11 +1,16 @@
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const AddTaskForm = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/tasks";
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("To-Do"); // Default category
+  const [category, setCategory] = useState("To-Do");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,6 +30,7 @@ const AddTaskForm = () => {
       console.log(res.data);
       if (res.data.insertedId) {
         toast.success("Task added successfully");
+        navigate(from);
       }
     });
   };

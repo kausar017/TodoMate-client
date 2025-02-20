@@ -15,15 +15,31 @@ const Navbar = () => {
   const link = (
     <div className="lg:flex space-x-2 lg:text-white md:text-black max-sm:text-black">
       <li>
-        <Link className="btn btn-sm btn-ghost" to={"/tasks"}>
-          Tasks
-        </Link>
+        {user && (
+          <Link className="btn btn-sm btn-ghost" to={"/tasks"}>
+            Tasks
+          </Link>
+        )}
+      </li>
+      <li>
+        {!user && (
+          <Link className="btn btn-sm btn-ghost" to={"/login"}>
+            Tasks
+          </Link>
+        )}
       </li>
 
       <li>
-        <Link className="btn btn-sm btn-ghost" to={"/addTask"}>
-          Add a Task
-        </Link>
+        {user && (
+          <Link className="btn btn-sm btn-ghost" to={"/addTask"}>
+            Add a Task
+          </Link>
+        )}
+        {!user && (
+          <Link className="btn btn-sm btn-ghost" to={"/login"}>
+            Add a Task
+          </Link>
+        )}
       </li>
     </div>
   );
@@ -58,7 +74,7 @@ const Navbar = () => {
           </div>
           <div className="flex items-center">
             <img
-            className="w-full max-w-10"
+              className="w-full max-w-10"
               src="https://i.postimg.cc/htJhYBKH/c4dc0c567ebcfe0e6e85dcc47baa8f6f-removebg-preview-removebg-preview.png"
               alt=""
             />
@@ -70,12 +86,15 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <button onClick={handleLogout} className="btn btn-sm btn-warning hover:scale-105 transition duration-300">
+            <button
+              onClick={handleLogout}
+              className="btn btn-sm btn-warning rounded-md shadow-gray-300 shadow-sm"
+            >
               Logout
             </button>
           ) : (
             <Link to={"/login"}>
-              <button className="btn btn-success btn-sm text-white hover:scale-105 transition duration-300">
+              <button className="btn btn-success btn-sm text-white rounded-lg shadow-black shadow-md">
                 Login
               </button>
             </Link>
