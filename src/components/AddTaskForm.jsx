@@ -84,7 +84,6 @@ const AddTaskForm = () => {
           <option value="Done">Done (Completed tasks)</option>
         </select>
       </div>
-
       <button type="submit" className="btn btn-primary w-full">
         Add Task
       </button>
