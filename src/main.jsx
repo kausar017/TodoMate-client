@@ -10,6 +10,8 @@ import MainLayout from './layout/MainLayout';
 import Home from './components/Home';
 import Login from './components/Login';
 import AuthProvider from './provider/AuthProvider';
+import Tasks from './components/Tasks';
+import AddTaskForm from './components/AddTaskForm';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login></Login>
+      },
+      {
+        path: '/tasks',
+        element: <Tasks></Tasks>
+      },
+      {
+        path: '/addTask',
+        element: <AddTaskForm></AddTaskForm>
       },
     ]
   },
