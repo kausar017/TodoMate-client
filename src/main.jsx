@@ -13,7 +13,8 @@ import { Toaster } from "react-hot-toast";
 import Loader from "./components/Loader";
 import Error from "./components/Error";
 import PrivateRoute from "./provider/privetRoute/PrivateRoute";
-import {  QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import UpdateTask from "./components/UpdateTask";
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path: "/tasks",
         element: <Tasks></Tasks>,
+      },
+      {
+        path: "/update/:id",
+        element: <UpdateTask />,
       },
       {
         path: "/addTask",

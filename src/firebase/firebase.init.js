@@ -6,14 +6,17 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA-eskfRMuHFTfMLIVquzcPpkFalmH_26E",
-  authDomain: "task-ph.firebaseapp.com",
-  projectId: "task-ph",
-  storageBucket: "task-ph.firebasestorage.app",
-  messagingSenderId: "167684220446",
-  appId: "1:167684220446:web:78bd6dfc4ba089a642f00f"
+  apiKey: "AIzaSyAoWctadbAyes3zMATwDgjepGGGUh8LUT0",
+  authDomain: "todomate-bc25f.firebaseapp.com",
+  projectId: "todomate-bc25f",
+  storageBucket: "todomate-bc25f.firebasestorage.app",
+  messagingSenderId: "58657882226",
+  appId: "1:58657882226:web:bce8bf1931541f814482eb"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+
+
+

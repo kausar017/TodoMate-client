@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { BiEdit } from "react-icons/bi";
-import UpdateTask from "./UpdateTask";
+import { Link } from "react-router-dom";
 
 const Tasks = () => {
   const [deletedTask, setDeletedTask] = useState(null);
@@ -27,6 +27,9 @@ const Tasks = () => {
   if (isLoading) {
     return <Loader />;
   }
+  console.log(tasks);
+
+  // const data = tasks.filter((item)=> item)
 
   const handleDelete = async (id) => {
     setDeletedTask(id);
@@ -39,10 +42,6 @@ const Tasks = () => {
     } catch (error) {
       console.log("Data not deleted");
     }
-  };
-
-  const handaleEdite = (id) => {
-    console.log(id);
   };
 
   return (
@@ -84,12 +83,12 @@ const Tasks = () => {
                   >
                     <MdDelete />
                   </button>
-                  <button
-                    onClick={() => handaleEdite(task?._id)}
+                  <Link
+                    to={`/update/${task._id}`}
                     className="border p-2 rounded-full absolute -top-5 right-8 shadow-sm shadow-black hover:bg-red-300 text-red-600"
                   >
                     <BiEdit />
-                  </button>
+                  </Link>
                 </motion.div>
               </motion.div>
             ))}
@@ -130,12 +129,12 @@ const Tasks = () => {
                   >
                     <MdDelete />
                   </button>
-                  <button
-                    onClick={() => handaleEdite(task?._id)}
+                  <Link
+                    to={`/update/${task._id}`}
                     className="border p-2 rounded-full absolute -top-5 right-8 shadow-sm shadow-black hover:bg-red-300 text-red-600"
                   >
                     <BiEdit />
-                  </button>
+                  </Link>
                 </motion.div>
               </motion.div>
             ))}
@@ -176,12 +175,12 @@ const Tasks = () => {
                   >
                     <MdDelete />
                   </button>
-                  <button
-                    onClick={() => handaleEdite(task?._id)}
+                  <Link
+                    to={`/update/${task._id}`}
                     className="border p-2 rounded-full absolute -top-5 right-8 shadow-sm shadow-black hover:bg-red-300 text-red-600"
                   >
                     <BiEdit />
-                  </button>
+                  </Link>
                 </motion.div>
               </motion.div>
             ))}

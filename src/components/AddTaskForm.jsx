@@ -1,9 +1,12 @@
 import axios from "axios";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import toast from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const AddTaskForm = () => {
+  const { user } = useContext(AuthContext);
+
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/tasks";
@@ -24,6 +27,7 @@ const AddTaskForm = () => {
       description,
       timestamp: new Date().toISOString(),
       category,
+      email: user?.email,
     };
     console.log(newTask);
     axios.post("http://localhost:5000/tasks", newTask).then((res) => {
