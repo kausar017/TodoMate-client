@@ -13,6 +13,7 @@
     "@hello-pangea/dnd": "^18.0.1",
     "@tanstack/react-query": "^5.66.8",
     "axios": "^1.7.9",
+    "dark-mode-toggle": "^0.16.2",
     "date-fns": "^4.1.0",
     "firebase": "^11.3.1",
     "framer-motion": "^12.4.7",

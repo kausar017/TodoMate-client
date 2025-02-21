@@ -9,7 +9,7 @@ const Login = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/tasks";
+  const from = location.state?.from?.pathname || "/";
 
   const handleGoogleLogin = () => {
     googleLogin()
@@ -23,10 +23,9 @@ const Login = () => {
         axios.post("http://localhost:5000/users", userInfo).then((res) => {
           console.log(res.data);
         });
-        navigate(from);
+        navigate(from, { replace: true });
         toast.success("Login Success");
       })
-
       .catch((err) => {
         console.log(err);
       });
@@ -42,7 +41,7 @@ const Login = () => {
 
       <button
         onClick={handleGoogleLogin}
-        className={`btn shadow-md shadow-black hover:shadow-slate-800`}
+        className={`btn btn-outline btn-accent shadow-md shadow-black hover:shadow-slate-800`}
       >
         Login With Google
       </button>

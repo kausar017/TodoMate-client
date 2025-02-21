@@ -97,9 +97,9 @@ const Home = () => {
   const { englishDate, bengaliDate } = formatDate(currentDate);
 
   return (
-    <div className="flex items-center justify-center h-screen  text-black ">
+    <>
       {/* Initial background and welcome text animation */}
-      <div className="absolute top-40">
+      <div className="text-center mt-10">
         <motion.div
           className=""
           initial={{ opacity: 0, scale: 0 }}
@@ -116,64 +116,69 @@ const Home = () => {
           </motion.h1>
         </motion.div>
       </div>
-
-      <div className="flex absolute w-72 h-72  items-center justify-center space-x-4">
-        <div>
-          {/* Analog clock using react-clock */}
-          {showAnalogClock && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 2, delay: 1 }}
-              className="relative"
-            >
-              <Clock value={new Date()} size={250} className='bg-purple-800/50 rounded-full' />
-            </motion.div>
-          )}
-          {/* Digital clock appearance after 2 seconds */}
-          {showClock && (
-            <motion.div
-              className="absolute top-10 -left-20 p-4 rounded-full shadow-lg flex items-center gap-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1 }}
-            >
-              <span>{time}</span>
-            </motion.div>
-          )}
-        </div>
-
+      <div className="flex flex-col justify-center items-center min-h-[500px]">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 3 }}
-          className=""
+          transition={{ duration: 2, delay: 1 }}
+          className="md:flex gap-5 items-center lg:border p-5 md:border rounded-l-full shadow-md shadow-gray-500 backdrop-blur-md"
+          draggable
         >
-          {/* Card */}
-          <div className="p-6 rounded-lg shadow-md shadow-black w-80">
-            <h2 className="text-2xl font-bold mb-4">Current Date</h2>
-
-            {/* English Date */}
-            <div className="mb-2">
-              <p className="text-lg font-medium">English Date:</p>
-              <p className="text-xl">{englishDate}</p>
+          <div className="relative z-10">
+            {/* Analog clock using react-clock */}
+            {showAnalogClock && (
+              <div>
+                <Clock
+                  value={new Date()}
+                  size={250}
+                  className="bg-[#0e5128]/60 rounded-full shadow-md shadow-gray-600"
+                />
+              </div>
+            )}
+            {/* Digital clock appearance after 2 seconds */}
+            <div className="absolute top-10 left-[4.5rem] pt-5 flex items-center gap-2 ">
+              {showClock && (
+                <div>
+                  <span className="bg-white p-2 rounded-full">{time}</span>
+                </div>
+              )}
             </div>
+          </div>
 
-            {/* Bengali Date */}
-            <div className="mb-2">
-              <p className="text-lg font-medium">বাংলা তারিখ:</p>
-              <p className="text-xl">{bengaliDate}</p>
-            </div>
+          <div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2, delay: 2 }}
+              className=""
+            >
+              {/* Card */}
+              <div className="p-6 rounded-lg shadow-md shadow-black">
+                <h2 className="text-2xl font-bold mb-4">Current Date</h2>
 
-            {/* Day */}
-            <div className="flex items-center">
-              <p className="text-lg font-medium">Day:</p>
-              <p className="text-xl">{englishDate.split(",")[0]}</p>
-            </div>
+                {/* English Date */}
+                <div className="mb-2">
+                  <p className="text-lg font-medium">English Date:</p>
+                  <p className="text-xl">{englishDate}</p>
+                </div>
+
+                {/* Bengali Date */}
+                <div className="mb-2">
+                  <p className="text-lg font-medium">বাংলা তারিখ:</p>
+                  <p className="text-xl">{bengaliDate}</p>
+                </div>
+
+                {/* Day */}
+                <div className="flex items-center">
+                  <p className="text-lg font-medium">Day:</p>
+                  <p className="text-xl">{englishDate.split(",")[0]}</p>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
-    </div>
+    </>
   );
 };
 

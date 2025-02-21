@@ -59,15 +59,17 @@ const Tasks = () => {
   const categories = [
     {
       name: "To-Do",
-      bgClass: "bg-black/10 p-4 rounded-lg shadow-black shadow-md",
+      bgClass:
+        " p-4 rounded-lg shadow-black shadow-md shadow-md shadow-gray-500 border",
     },
     {
       name: "In Progress",
-      bgClass: "bg-blue-200 p-4 rounded-lg shadow-black shadow-md",
+      bgClass:
+        " p-4 rounded-lg shadow-black shadow-md shadow-md shadow-gray-500 border",
     },
     {
       name: "Done",
-      bgClass: "bg-green-200 p-4 rounded-lg shadow-black shadow-md",
+      bgClass: " p-4 rounded-lg shadow-md shadow-gray-500 border",
     },
   ];
 
@@ -108,7 +110,7 @@ const Tasks = () => {
                     {...provided.droppableProps}
                     className={`${category.bgClass} min-h-screen`}
                   >
-                    {category.name}
+                    <p className="text-xl font-bold"> {category.name}</p>
                     {localTasks
                       .filter((task) => task.category === category.name)
                       .map((task, index) => (
@@ -122,7 +124,7 @@ const Tasks = () => {
                               ref={provided.innerRef}
                               {...provided.draggableProps}
                               {...provided.dragHandleProps}
-                              className="bg-white p-2 my-6 shadow-sm shadow-black rounded-md relative"
+                              className="p-2 my-6 shadow-md shadow-gray-500 rounded-md relative border backdrop-blur-md"
                             >
                               <h3 className="font-semibold text-xl">
                                 {task.title}
@@ -139,7 +141,7 @@ const Tasks = () => {
                               </button>
                               <Link
                                 to={`/update/${task._id}`}
-                                className="border p-2 rounded-full absolute -top-5 right-8 shadow-sm shadow-black hover:bg-red-300 text-red-600"
+                                className="border p-2 rounded-full absolute -top-5 right-8 shadow-sm shadow-black hover:bg-white/20 "
                               >
                                 <BiEdit />
                               </Link>

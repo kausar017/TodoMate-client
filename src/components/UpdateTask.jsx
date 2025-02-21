@@ -54,7 +54,7 @@ export default function UpdateTask() {
     <div className="flex flex-col justify-center items-center min-h-screen">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-full max-w-md mx-auto p-6 rounded-lg shadow-lg"
+        className="w-full max-w-md mx-auto p-6 rounded-lg shadow-lg shadow-gray-500 border"
       >
         <h2 className="text-2xl font-bold text-center mb-4">Update Task</h2>
 
