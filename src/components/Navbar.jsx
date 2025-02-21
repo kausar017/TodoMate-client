@@ -15,6 +15,11 @@ const Navbar = () => {
   const link = (
     <div className="lg:flex space-x-2 lg:text-white md:text-black max-sm:text-black">
       <li>
+        <Link className="btn btn-sm btn-ghost" to={"/"}>
+         Home
+        </Link>
+      </li>
+      <li>
         {user && (
           <Link className="btn btn-sm btn-ghost" to={"/tasks"}>
             Tasks
