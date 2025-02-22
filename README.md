@@ -2,13 +2,9 @@
 
 TodoMate is a **Task Management Application**, where users can manage tasks by **Add, Edit, Delete, and Drag & Drop**.
 
-![TodoMate Screenshot](https://your-image-link.com)
-
 ---
 
-## 🔗 **Live Demo**
-
-🚀 **Live Link:** [https://todomate.vercel.app](https://todomate.vercel.app)
+🚀 **Live Link:** [https://todometeapp.netlify.app]
 
 ---
 
@@ -51,3 +47,12 @@ TodoMate is a **Task Management Application**, where users can manage tasks by *
   "react-beautiful-dnd": "^13.1.0"
 }
 ```
+
+## 🏗 Backend
+
+🔥 API Endpoints (Backend)
+Method | Endpoint |Description
+POST   | /tasks   | Add a new task
+GET    |/tasks    |Get all tasks
+PUT    | /tasks/:id | Update task
+DELETE | /tasks/:id | Delete task
