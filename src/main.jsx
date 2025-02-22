@@ -40,7 +40,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        element: <UpdateTask />,
+        element: (
+          <PrivateRoute>
+            <UpdateTask />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/addTask",

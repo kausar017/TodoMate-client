@@ -20,7 +20,7 @@ const Login = () => {
           name: user?.displayName,
           email: user?.email,
         };
-        axios.post("http://localhost:5000/users", userInfo).then((res) => {
+        axios.post("https://todo-mat-sirver.vercel.app/users", userInfo).then((res) => {
           console.log(res.data);
         });
         navigate(from, { replace: true });
@@ -32,9 +32,9 @@ const Login = () => {
   };
 
   return (
-    <div className="mt-20 mx-auto flex items-center justify-center">
+    <div className="mt-20 mx-auto md:flex items-center justify-center">
       <img
-        className="w-full max-w-96"
+        className="w-full max-w-80"
         src="https://i.postimg.cc/BQVLCCrZ/Login-amico.png"
         alt=""
       />

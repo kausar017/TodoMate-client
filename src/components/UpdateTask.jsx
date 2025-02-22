@@ -4,6 +4,7 @@ import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Loader from "./Loader";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 export default function UpdateTask() {
   const { id } = useParams();
@@ -18,22 +19,21 @@ export default function UpdateTask() {
   // Form submission function
   const onSubmit = async (data) => {
     try {
-      const res = await axios.put(
-        `http://localhost:5000/updatTask/${id}`,
+      await axios.put(
+        `https://todo-mat-sirver.vercel.app/updatTask/${id}`,
         data
       );
-      console.log(res.data);
-
+      toast.success("Data Updating Success");
       navigate("/tasks");
     } catch (error) {
-      console.error("Error updating task:", error);
+      toast.error("Error updating task:", error);
     }
   };
 
   const { data: tasks = [], isLoading } = useQuery({
     queryKey: ["task"],
     queryFn: async () => {
-      const res = await axios.get(`http://localhost:5000/tasks`);
+      const res = await axios.get(`https://todo-mat-sirver.vercel.app/tasks`);
       return res.data;
     },
   });

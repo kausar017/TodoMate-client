@@ -23,7 +23,7 @@ const Tasks = () => {
   } = useQuery({
     queryKey: ["task"],
     queryFn: async () => {
-      const res = await axios.get("http://localhost:5000/tasks");
+      const res = await axios.get("https://todo-mat-sirver.vercel.app/tasks");
       return res.data;
     },
   });
@@ -47,7 +47,7 @@ const Tasks = () => {
     setDeletedTask(id);
     try {
       setTimeout(async () => {
-        await axios.delete(`http://localhost:5000/deletTasks/${id}`);
+        await axios.delete(`https://todo-mat-sirver.vercel.app/deletTasks/${id}`);
         toast.success("Task deleted");
         refetch();
       }, 500);
@@ -87,7 +87,7 @@ const Tasks = () => {
     setLocalTasks(updatedTasks);
 
     try {
-      await axios.put(`http://localhost:5000/updateDrag/${draggableId}`, {
+      await axios.put(`https://todo-mat-sirver.vercel.app/updateDrag/${draggableId}`, {
         category: destination.droppableId,
       });
       refetch();
