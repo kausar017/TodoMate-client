@@ -90,7 +90,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-32 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-white rounded-box z-[1] mt-3 w-32 p-2 shadow"
             >
               {link}
             </ul>
@@ -136,6 +136,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{link}</ul>
         </div>
         <div className="navbar-end">
+          {user && <img referrerPolicy="no-referrer" className="w-12 mr-5 rounded-full" src={user?.photoURL} alt="" />}
           {user ? (
             <button
               onClick={handleLogout}

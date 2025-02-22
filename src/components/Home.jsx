@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Clock from "react-clock";
 import "react-clock/dist/Clock.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
@@ -121,7 +122,7 @@ const Home = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 1 }}
-          className="md:flex gap-5 items-center lg:border p-5 md:border rounded-l-full shadow-md shadow-gray-500 backdrop-blur-md"
+          className="md:flex md:gap-5 items-center lg:border p-5 md:border rounded-l-full md:shadow-md shadow-gray-500 backdrop-blur-md"
           draggable
         >
           <div className="relative z-10">
@@ -139,7 +140,7 @@ const Home = () => {
             <div className="absolute top-10 left-[4.5rem] pt-5 flex items-center gap-2 ">
               {showClock && (
                 <div>
-                  <span className="bg-white p-2 rounded-full">{time}</span>
+                  <span className="bg-white p-2 rounded-full font-semibold text-gray-800">{time}</span>
                 </div>
               )}
             </div>
@@ -178,6 +179,16 @@ const Home = () => {
           </div>
         </motion.div>
       </div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, delay: 1 }}
+        className="flex justify-center"
+      >
+        <Link to={"/login"} className="btn px-8 bg-[#0e5128]/80 text-white shadow-md shadow-gray-500">
+          Start
+        </Link>
+      </motion.div>
     </>
   );
 };
