@@ -101,14 +101,14 @@ const Tasks = () => {
       <h1 className="text-center pt-10 font-bold text-5xl underline">Task</h1>
       <div className="container mx-auto pt-10">
         <DragDropContext onDragEnd={handleDragEnd}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-2">
             {categories.map((category, index) => (
               <Droppable key={index} droppableId={category.name}>
                 {(provided) => (
                   <div
                     ref={provided.innerRef}
                     {...provided.droppableProps}
-                    className={`${category.bgClass} min-h-screen`}
+                    className={`${category.bgClass} md:min-h-screen`}
                   >
                     <p className="text-xl font-bold"> {category.name}</p>
                     {localTasks

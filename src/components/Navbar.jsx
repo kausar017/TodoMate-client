@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 import toast from "react-hot-toast";
-
+import "./Navbar.css";
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
 
@@ -15,35 +15,35 @@ const Navbar = () => {
   const link = (
     <div className="lg:flex space-x-2 lg:text-white md:text-black max-sm:text-black">
       <li>
-        <Link className="btn btn-sm btn-ghost" to={"/"}>
+        <NavLink className="btn btn-sm btn-ghost" to={"/"}>
           Home
-        </Link>
+        </NavLink>
       </li>
       <li>
         {user && (
-          <Link className="btn btn-sm btn-ghost" to={"/tasks"}>
+          <NavLink className="btn btn-sm btn-ghost" to={"/tasks"}>
             Tasks
-          </Link>
+          </NavLink>
         )}
       </li>
       <li>
         {!user && (
-          <Link className="btn btn-sm btn-ghost" to={"/login"}>
+          <NavLink className="btn btn-sm btn-ghost" to={"/login"}>
             Tasks
-          </Link>
+          </NavLink>
         )}
       </li>
 
       <li>
         {user && (
-          <Link className="btn btn-sm btn-ghost" to={"/addTask"}>
+          <NavLink className="btn btn-sm btn-ghost" to={"/addTask"}>
             Add a Task
-          </Link>
+          </NavLink>
         )}
         {!user && (
-          <Link className="btn btn-sm btn-ghost" to={"/login"}>
+          <NavLink className="btn btn-sm btn-ghost" to={"/login"}>
             Add a Task
-          </Link>
+          </NavLink>
         )}
       </li>
     </div>
@@ -68,7 +68,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-[#0e5128] shadow-md text-white">
+    <div className="bg-black/30 backdrop-blur-md shadow-md text-white fixed w-full z-10">
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
@@ -136,7 +136,14 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{link}</ul>
         </div>
         <div className="navbar-end">
-          {user && <img referrerPolicy="no-referrer" className="w-12 mr-5 rounded-full" src={user?.photoURL} alt="" />}
+          {user && (
+            <img
+              referrerPolicy="no-referrer"
+              className="w-12 mr-5 rounded-full"
+              src={user?.photoURL}
+              alt=""
+            />
+          )}
           {user ? (
             <button
               onClick={handleLogout}

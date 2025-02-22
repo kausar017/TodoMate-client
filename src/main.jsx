@@ -57,10 +57,9 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <div className="bg-gray-10">
+    <div className="">
       <AuthProvider>
         <QueryClientProvider client={queryClient}>
           <RouterProvider router={router}></RouterProvider>

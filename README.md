@@ -1,8 +1,53 @@
-# React + Vite
+# 📝 TodoMate - Task Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TodoMate is a **Task Management Application**, where users can manage tasks by **Add, Edit, Delete, and Drag & Drop**.
 
-Currently, two official plugins are available:
+![TodoMate Screenshot](https://your-image-link.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+## 🔗 **Live Demo**
+
+🚀 **Live Link:** [https://todomate.vercel.app](https://todomate.vercel.app)
+
+---
+
+## 📢 **Features**
+
+✅ **Firebase Authentication** (Google Sign-In)  
+✅ **Add, Edit, Delete & Drag & Drop Tasks**  
+✅ **Tasks Categorized: To-Do, In Progress, Done**  
+✅ **Real-time Updates (WebSockets / Change Streams)**  
+✅ **Fully Responsive (Mobile & Desktop)**  
+✅ **Dark Mode Toggle (Bonus Feature)**
+
+---
+
+## 🛠 **Technologies Used**
+
+| Technology                     | Description         |
+| ------------------------------ | ------------------- |
+| **React.js (Vite)**            | Frontend Framework  |
+| **Firebase Auth**              | User Authentication |
+| **Express.js**                 | Backend API         |
+| **MongoDB Atlas**              | Database            |
+| **Socket.io / Change Streams** | Real-time Sync      |
+| **Tailwind CSS**               | UI Design           |
+| **react-beautiful-dnd**        | Drag & Drop System  |
+
+---
+
+## 📦 **Dependencies**
+
+👉 **Frontend:**
+
+```json
+"dependencies": {
+  "react": "^18.0.0",
+  "react-dom": "^18.0.0",
+  "react-router-dom": "^6.11.2",
+  "firebase": "^9.0.0",
+  "axios": "^1.4.0",
+  "react-beautiful-dnd": "^13.1.0"
+}
+```

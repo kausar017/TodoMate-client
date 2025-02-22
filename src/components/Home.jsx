@@ -102,9 +102,9 @@ const Home = () => {
 
   return (
     <>
-      <div className="">
+      <div className="flex flex-col justify-center min-h-[90vh]">
         {/* Initial background and welcome text animation */}
-        <div className="text-center mt-10">
+        <div className="text-center">
           <motion.div
             className=""
             initial={{ opacity: 0, scale: 0 }}
@@ -136,7 +136,7 @@ const Home = () => {
                   <Clock
                     value={new Date()}
                     size={250}
-                    className="bg-[#0e5128]/60 rounded-full shadow-md shadow-gray-600"
+                    className="bg-white rounded-full shadow-md shadow-gray-600"
                   />
                 </div>
               )}
